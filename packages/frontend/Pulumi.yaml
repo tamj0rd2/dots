@@ -1,0 +1,4 @@
+name: dots-frontend
+runtime: nodejs
+main: infra
+description: A minimal AWS TypeScript Pulumi program
