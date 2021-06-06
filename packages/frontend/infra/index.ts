@@ -4,9 +4,8 @@ import * as mime from 'mime'
 import * as fs from 'fs'
 import * as path from 'path'
 
-const stack = pulumi.getStack()
-
-const bucket = new aws.s3.Bucket(stack, { website: { indexDocument: 'index.html' } })
+const bucketName = pulumi.getStack()
+const bucket = new aws.s3.Bucket(bucketName, { bucket: bucketName, website: { indexDocument: 'index.html' } })
 const distDir = path.resolve(__dirname, '../dist')
 
 fs.readdirSync(distDir).forEach((item) => {
@@ -18,7 +17,7 @@ fs.readdirSync(distDir).forEach((item) => {
   })
 })
 
-new aws.s3.BucketPolicy("bucketPolicy", {
+new aws.s3.BucketPolicy(bucketName, {
   bucket: bucket.bucket,
   policy: bucket.bucket.apply((bucketName) => JSON.stringify({
     Version: "2012-10-17",
