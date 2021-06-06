@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": "./",
-    "composite": true
+    "composite": true,
+    "outDir": "./bin"
   },
   "include": ["./src/**/*.ts", "./infra/**/*.ts"]
 }

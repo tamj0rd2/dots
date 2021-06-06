@@ -1,6 +1,12 @@
 {
   "name": "dots-frontend",
   "version": "1.0.0",
+  "scripts": {
+    "test": "echo 'todo: implement tests'",
+    "build": "echo 'todo: implement build'",
+    "deploy": "pulumi stack select dots-frontend-prod && pulumi up -f -y",
+    "destroy": "pulumi stack select dots-frontend-prod && pulumi destroy -f"
+  },
   "devDependencies": {
     "@types/mime": "^2.0.3",
     "@types/node": "^10.0.0",
