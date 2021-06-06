@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "typecheck": "tsc -b ./tsconfig.json",
+    "typecheck:watch": "yarn typecheck -w",
     "test": "echo 'implement yarn test'",
     "lint": "echo 'implement yarn lint'"
   },

@@ -4,7 +4,16 @@
     "baseUrl": "./",
     "rootDir": "./",
     "composite": true,
-    "outDir": "./bin"
+    "outDir": "./bin",
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "lib": ["dom", "es2015", "es2016"],
+    "skipLibCheck": true
   },
-  "include": ["./src/**/*.ts", "./infra/**/*.ts"]
+  "include": ["./src/**/*.ts", "./infra/**/*.ts"],
+  "exclude": ["artifacts/**/*", "dist/**/*", "public/**/*", "node_modules", "bin"]
 }
